@@ -11,4 +11,35 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-function Header() {}
+let headerContainer = document.querySelector('.header-container')
+//ask later why getElementByClassName did not work and
+//querySelector did
+
+function Header(headerDate, headerTitle, headerTemp) {
+
+    //creating elemetns
+    const header = document.createElement("div")
+    const date = document.createElement("span")
+    const title = document.createElement("h1")
+    const temp = document.createElement("span")
+
+    //adding classes
+    header.classList.add("header")
+    date.classList.add("date")
+    temp.classList.add("temp")
+
+    //adding the content 
+    date.textContent = "SMARCH 28, 2019"
+    title.textContent = "Lambda Times"
+    temp.textContent = "98°"
+    
+    //organization HTML style
+    headerContainer.appendChild(header)
+    header.appendChild(date)
+    header.appendChild(title)
+    header.appendChild(temp)
+
+    return header
+}
+
+Header()
